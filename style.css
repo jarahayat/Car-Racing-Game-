@@ -97,3 +97,26 @@ canvas {
         display: none; /* Mobile par फालतू text chipa do */
     }
 }
+#restartBtn {
+    display: none; /* Pehle se hide rahega */
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: #ff2222;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0px 4px 15px rgba(255, 34, 34, 0.4);
+    z-index: 10;
+    font-family: sans-serif;
+}
+
+#restartBtn:hover {
+    background: #e01b1b;
+    scale: 1.05;
+}
