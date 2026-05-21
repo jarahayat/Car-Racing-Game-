@@ -2,18 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Car Racing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Responsive Car Racing Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="game-container">
         <h2 id="scoreBoard">Score: 0</h2>
+        
         <div id="gameArea">
             <canvas id="gameCanvas" width="400" height="600"></canvas>
         </div>
-      
+
+        <!-- Mobile Touch Controls -->
+        <div class="mobile-controls">
+            <div class="row">
+                <button id="btnUp" class="ctrl-btn">▲</button>
+            </div>
+            <div class="row">
+                <button id="btnLeft" class="ctrl-btn">◀</button>
+                <button id="btnDown" class="ctrl-btn">▼</button>
+                <button id="btnRight" class="ctrl-btn">▶</button>
+            </div>
+        </div>
+
+        
     </div>
 
     <script src="index.js"></script>
