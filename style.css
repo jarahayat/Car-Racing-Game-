@@ -6,45 +6,94 @@ body {
     align-items: center;
     height: 100vh;
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     overflow: hidden;
+    touch-action: manipulation; /* Mobile par double-tap zoom rokne ke liye */
 }
 
 .game-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 #scoreBoard {
     margin: 0 0 10px 0;
-    font-size: 28px;
-    letter-spacing: 1px;
-    font-weight: bold;
+    font-size: 24px;
 }
 
 #gameArea {
     position: relative;
-    width: 400px;
-    height: 600px;
+    width: 100%;
+    aspect-ratio: 4 / 6; /* Canvas ka aspect ratio fix rakhega */
     border: 4px solid #fff;
-    background: #222; /* Khali background ki jagah solid dark grey */
-    border-radius: 4px;
+    background: #222;
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
 }
 
 canvas {
+    width: 100% !important;
+    height: 100% !important;
     position: absolute;
     top: 0;
     left: 0;
 }
 
-.instructions {
+/* --- MOBILE CONTROLS STYLING --- */
+.mobile-controls {
+    display: none; /* Desktop par buttons nahi dikhenge */
+    flex-direction: column;
+    align-items: center;
     margin-top: 15px;
-    font-size: 14px;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 8px;
+}
+
+.ctrl-btn {
+    width: 60px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid #fff;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    -webkit-user-select: none; /* Text selection rokne ke liye */
+    user-select: none;
+}
+
+.ctrl-btn:active {
+    background: rgba(255, 255, 255, 0.5); /* Touch karne par feedback */
+}
+
+.instructions {
+    margin-top: 10px;
+    font-size: 12px;
     text-align: center;
-    background: rgba(255, 255, 255, 0.15);
-    padding: 10px 20px;
-    border-radius: 20px;
+    opacity: 0.7;
+}
+
+/* Agar screen 600px se choti hai (Mobile Phones) */
+@media (max-width: 600px) {
+    .mobile-controls {
+        display: flex; /* Mobile par buttons show ho jayenge */
+    }
+    .instructions {
+        display: none; /* Mobile par फालतू text chipa do */
+    }
 }
